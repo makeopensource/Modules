@@ -1,0 +1,54 @@
+columns=3
+
+[[module]]
+id=0
+name="Getting Started"
+url="getting-started"
+icon="terminal-fill"
+column=0
+next=[1]
+
+[[module]]
+id=1
+name="Version Control"
+url="version-control"
+icon="flag-fill"
+column=1
+next=[2, 4]
+
+[[module]]
+id=2
+name="Git"
+url="git"
+icon="git"
+column=1
+next=[3]
+
+[[module]]
+id=3
+name="GitHub"
+url="github"
+icon="github"
+column=1
+
+[[module]]
+id=4
+name="Tools"
+url="tools"
+icon="flag-fill"
+column=2
+next=[5, 6]
+
+[[module]]
+id=5
+name="Editors"
+url="editors"
+icon="file-code-fill"
+column=2
+
+[[module]]
+id=6
+name="Licensing"
+url="licensing"
+icon="person-fill-lock"
+column=3

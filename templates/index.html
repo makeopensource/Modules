@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+
+
+{% block style %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/static/css/skill-tree.css">
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Modules</h1>
+
+<div class="module-intro">
+    <a class="module-icon-link" href="/module/{{ config.module[0].url }}">
+        <div class="module-icon-frame" title="{{ config.module[0].name }}">
+                <i class="bi-{{ config.module[0].icon }} module-icon"></i>
+        </div>
+    </a>
+</div>
+
+<div class="vl"></div>
+
+<div class="modules">
+    {% for column in range(1, config.columns + 1) %}
+        <div class="module-column">
+            {% for module in config.module | selectattr("column", "equalto", column) %}
+
+
+                {% if module.id in unlocked %}
+
+                    <div class="module-row">
+                        <a class="module-icon-link" href="/module/{{ module.url }}">
+                            <div class="module-icon-frame" title="{{ module.name }}">
+                                    <i class="bi-{{ module.icon }} module-icon"></i>
+                            </div>
+                        </a>
+                        {% if column < config.columns and loop.first %} 
+                            <div class="hl"></div>
+                        {% endif %}
+                    </div>
+
+                    {% if not loop.last %}
+                        <div class="vl"></div>
+                    {% endif %}
+
+                {% else %}
+
+                    <div class="module-row">
+                        <div class="module-icon-frame-locked" title="Locked">
+                            <i class="bi-shield-lock-fill module-icon-locked"></i>
+                        </div>
+                        {% if column < config.columns and loop.first %} 
+                            <div class="hl-locked"></div>
+                        {% endif %}
+                    </div>
+
+                    {% if not loop.last %}
+                        <div class="vl-locked"></div>
+                    {% endif %} 
+
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+<script src="/static/js/module.js"></script>
+
+{% endblock %}

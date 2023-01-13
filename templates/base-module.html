@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/module.css">
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="module">{% mk %}{% block module %}{% endblock %}{% endmk %}</div>
+    <div class="footer"></div>
+{% endblock %}
+
+
