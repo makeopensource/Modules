@@ -25,6 +25,66 @@ ul {
     color: grey;
 }
 
-.footer {
-    height: 100px;
+.tab-group {
+    width: 100%;
+    min-height: 50px;
+    background-color: whitesmoke;
+}
+
+.tab {
+    display: none;
+    padding: 20px;
+}
+
+.tab,.tab p {
+    font-size: 16px;
+    line-height: 1.6rem;
+}
+
+.tab-button {
+    padding: 10px 20px;
+}
+
+.tab-button:hover {
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+.tab-selected {
+    border-bottom: 2px solid black;
+}
+
+.tab-buttons {
+    display: flex;
+}
+
+.tab-content {
+}
+
+.tab-group code {
+    background-color: lightgrey;
+}
+
+.file-download {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.file-download:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.module-completion {
+
+}
+
+.module-complete {
+    position: sticky;
+    text-align: center;
+    padding: 10px;
+    top: 0;
+    background-color: #32d373;
 }

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, send_file
 from jinja2.exceptions import TemplateNotFound
 import toml
 import json
@@ -23,7 +23,7 @@ def add_unlocked(response, module, old_unlocked = None):
     return unlocked
     
 def get_unlocked():
-    return json.loads(
+    return [0] + json.loads(
         request.cookies.get("unlocked", "[]")
     )
 
@@ -37,9 +37,8 @@ module_map = {x["url"]: x for x in config["module"]}
 
 @app.route("/")
 def hello_world():
-    unlocked = get_unlocked()
-    print(f"Unlocked list: {unlocked}")
-    return render_template("index.html", config=config, unlocked=unlocked)
+    response = render_template("index.html", config=config, unlocked=get_unlocked())
+    return response
 
 
 @app.route("/module/<module_url>")
@@ -52,7 +51,7 @@ def module_view(module_url):
         return f"Module \"{module_name}\" not unlocked"
 
     try:
-        response = make_response(render_template(f"{module_url}.html"))
+        response = make_response(render_template(f"{module_url}.html", complete=module_id in get_unlocked()))
    
     except TemplateNotFound:
         response = make_response(f"Module \"{module_name}\" not yet implemented")
@@ -65,4 +64,8 @@ def module_view(module_url):
     return response
 
  
+@app.route("/file/<filename>")
+def file_view(filename):
+    return send_file(f"file/{filename}", as_attachment=True)
+
 

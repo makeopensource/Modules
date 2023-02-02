@@ -3,4 +3,79 @@
 
 # Git
 
+Git is a version control system written by Linus Torvalds in 2005 for the purpose
+of maintaining the Linux Kernel. It is available for all operating systems in some 
+capacity, and is able to save the state of programming projects over the course of
+time, as well as merge the content of two programs. Git is a massive program, and 
+has an extensive list of terminology which is important for understanding how to 
+use it. This section will provide a glossary at the end, and a list of additional
+resources, for your convenience!
+
+## Installing Git
+
+Select the tab with your current operating system, and follow the instructions
+to install git:
+
+<div class="tab-group">
+    <div class="tab-buttons">
+        <div id="linux" class="tab-button">Linux</div>
+        <div id="mac" class="tab-button">Mac</div>
+        <div id="windows" class="tab-button">Windows</div>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab" for="linux">
+            At the command line, run the appropriate command for your distribution [1]:
+            <h4>Debian/Ubuntu</h4>
+            <code>$ sudo apt install git</code>
+
+            <h4>Fedora</h4>
+            <p><code>$ yum install git</code> for Fedora < 21</p>
+            <p><code>$ dnf install git</code> for Fedora >= 22</p>
+
+            <p>
+                More distribution commands are available
+                <a href="https://git-scm.com/download/linux">here</a>.
+            </p>
+        </div>
+        <div class="tab" for="mac">
+            Open the Terminal app, and run <code>git --version</code>. If you don't
+            have git installed, it will prompt you to install it. You can install it
+            according to the prompt, or install <a href="brew.org">Homebrew</a> and
+            use the command provided underneath [1].
+
+            <h4>Homebrew</h4>
+            <p><code>$ brew install homebrew</code></p>
+            <p>
+                More options are available
+                <a href="https://git-scm.com/download/mac">here</a>.
+            </p>
+        </div>
+        <div class="tab" for="windows">
+            Click <a href="https://github.com/git-for-windows/git/releases/download/v2.39.0.windows.2/Git-2.39.0.2-32-bit.exe">here</a>
+            for the latest (2.39.0) 32-bit version of git for Windows [1].
+        </div>
+    </div>
+</div>
+
+## Initializing a Git Project
+
+## Basics of Git
+
+## Advanced Git Techniques
+
+## Module Activity
+
+<a href="/file/git-challenge.pdf"><button class="file-download">Download Git Challenge</button></a>
+
+## Glossary
+
+## Additional Resources
+
+
+
+## References
+
+[1] "Git," git-scm.com. https://git-scm.com
+
 {% endblock %}

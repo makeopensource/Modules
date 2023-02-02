@@ -1,0 +1,65 @@
+{% extends "base-module.html" %}
+{% block module %}
+
+# Installing Software
+
+The following modules will require you to install and configure a bunch
+of software, and have some working knowledge of the tools we use to run 
+programs. In this module, we will walk you through the software you need, 
+and how to install it.
+
+## Command Prompt
+
+The command prompt allows you to run various commands on any machine
+you use. Some operating systems have a build-in command prompt, and 
+some require a bit of extra software to get working.
+
+<div class="tab-group">
+    <div class="tab-buttons">
+        <div id="linux" class="tab-button">Linux</div>
+        <div id="mac" class="tab-button">Mac</div>
+        <div id="windows" class="tab-button">Windows</div>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab" for="linux">
+            Most linux distributions come with built-in command prompts.
+            To access the command prompt, press <code>Ctrl + Alt + T</code>,
+            or search for the "Terminal" application.
+        </div>
+        <div class="tab" for="mac">
+            MacOS devices, similar to linux, come with a terminal application
+            called "Terminal". To open your command-prompt, simply
+            open the application.
+        </div>
+        <div class="tab" for="windows">
+            <p>
+                Most of the modules in this tutorial are compatible with the default
+                Windows shell, Powershell, which is available as an application on 
+                all Windows devices. However, down the line, this may prove to be more 
+                difficult, as most of our development and deployment is on Linux computers.
+            </p>
+
+            <h2>WSL2</h2>
+            <p>
+                Microsoft acknowledges that for developers, having access to Linux is an
+                invaluable tool. WSL2 allows Windows users to run certain programs on linux,
+                within Windows and without much hassle.<br/><br/>
+
+                To install, open PowerShell, type the command <code>wsl --install</code> and 
+                click <code>Enter</code>.<br/><br/>
+
+                Once WSL2 is done installing, use the Start menu to search for "Ubuntu" and 
+                open it. You should see a terminal-like application open up. From there, follow
+                the instructions <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password">here</a>
+                to complete setup [1].
+            </p>
+        </div>
+    </div>
+</div>
+
+## Citations
+
+[1] craigloewen-msft, "Windows Subsystem for Linux Documentation," learn.microsoft.com. https://learn.microsoft.com/en-us/windows/wsl/
+
+{% endblock %}

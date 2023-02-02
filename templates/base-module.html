@@ -6,10 +6,16 @@
 {% endblock %}
 
 
+{% block nav %}
+    {% if complete %}
+        <div class="module-completion"></div>
+    {% endif %}
+{% endblock %}
+
 
 {% block content %}
     <div class="module">{% mk %}{% block module %}{% endblock %}{% endmk %}</div>
     <div class="footer"></div>
+    <script src="/static/js/module.js"></script>
 {% endblock %}
-
 

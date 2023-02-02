@@ -16,21 +16,35 @@
 
 <h1>Modules</h1>
 
-<div class="module-intro">
-    <a class="module-icon-link" href="/module/{{ config.module[0].url }}">
-        <div class="module-icon-frame" title="{{ config.module[0].name }}">
-                <i class="bi-{{ config.module[0].icon }} module-icon"></i>
-        </div>
-    </a>
-</div>
+{% for module in config.module | selectattr("column", "equalto", 0) %}
+     {% if module.id in unlocked %}
 
-<div class="vl"></div>
+            <div class="module-row">
+                <a class="module-icon-link" href="/module/{{ module.url }}">
+                    <div class="module-icon-frame" title="{{ module.name }}">
+                            <i class="bi-{{ module.icon }} module-icon"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="vl"></div>
+
+    {% else %}
+
+        <div class="module-row">
+            <div class="module-icon-frame-locked" title="Locked">
+                <i class="bi-shield-lock-fill module-icon-locked"></i>
+            </div>
+        </div>
+        <div class="vl-locked"></div>
+
+    {% endif %}
+{% endfor %}
 
 <div class="modules">
     {% for column in range(1, config.columns + 1) %}
         <div class="module-column">
             {% for module in config.module | selectattr("column", "equalto", column) %}
-
 
                 {% if module.id in unlocked %}
 
