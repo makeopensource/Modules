@@ -1,6 +1,19 @@
+body {
+    overflow-y: scroll;
+}
+
 p, ul {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6rem;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
 img {
@@ -11,7 +24,7 @@ img {
 }
 
 ul {
-    list-style: inside;
+    list-style: disc;
     margin-left: 20px;
     margin-bottom: 0.67em;
 }
@@ -20,7 +33,7 @@ ul {
     margin: 30px 0;
 }
 
-.citation {
+.caption {
     text-align: center;
     color: grey;
 }
@@ -75,16 +88,4 @@ ul {
 .file-download:hover {
     cursor: pointer;
     background-color: lightgrey;
-}
-
-.module-completion {
-
-}
-
-.module-complete {
-    position: sticky;
-    text-align: center;
-    padding: 10px;
-    top: 0;
-    background-color: #32d373;
 }

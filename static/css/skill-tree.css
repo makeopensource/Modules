@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll;
+}
+
 :root {
     --green: #27db8a;
 }
@@ -5,10 +9,30 @@
 .modules {
     margin: auto;
     display: flex;
+    flex-direction: column;
+}
+
+.module-row {
+    display: flex;
+}
+
+/*
+.module-row + .module-row {
+    border-top: 1px solid black;
+}
+*/
+
+.module {
+    margin: 10px;
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
 }
 
 .module-icon-frame {
-    border: 2px solid black;
+    border: 2px solid var(--green);
     border-radius: 100px;
     display: flex;
     justify-content: center;
@@ -48,7 +72,7 @@
 }
 
 .module-icon-link:visited .module-icon-frame {
-    border-color: var(--green);
+    border-color: black;
 }
 
 .module-icon-link {
@@ -61,38 +85,3 @@
     align-items: center;
 }
 
-.vl {
-    border-left: 2px solid black;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    left: 26px;
-    margin-right: auto;
-}
-
-.vl-locked {
-    border-left: 2px solid lightgrey;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    left: 26px;
-    margin-right: auto;
-}
-
-.hl {
-    border-top: 2px solid black;
-    width: 20px;
-    height: 0;
-    position: relative;
-    top: 50%;
-    float: right;
-}
-
-.hl-locked {
-    border-top: 2px solid lightgrey;
-    width: 20px;
-    height: 0;
-    position: relative;
-    top: 50%;
-    float: right;
-}

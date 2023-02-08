@@ -1,0 +1,126 @@
+{% extends "base-module.html" %}
+{% block module %}
+
+# GitHub
+
+GitHub is an online platform that allows users to **store Git repositories** (repos)
+online. It is convenient for developers to be able to place their git repos
+elsewhere for a number of reasons:
+
+1. Backups: If your computer bursts into flames, you will lose your local git repo.
+If you store it on GitHub, it is hosted in a secondary location.
+
+2. Shareability: Especially for open-source development, hosting openly-available
+repositories makes for easier collaboration between developers.
+
+3. Convenience: GitHub provides a few features that make developing applications
+easier in a select few cases.
+
+
+*Since GitHub is proprietary technology, we cannot conveniently give tutorials without
+the chance of them changing easily in the future. However, we will attempt to supply
+you with a short guide about what to set up, and where to find that documentation.*
+
+To begin, [create an account](https://github.com/signup). Once you create an account,
+you will be able to create new repositories, or view other repos.
+
+## Setting up SSH
+
+I suggest to start by [creating an ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+SSH is a method of authentication. When you retreive a github repo, GitHub will check your
+ssh key to verify your identity. 
+
+## Git Commands
+
+As a user, you can use a few git commands to interact with GitHub. Remember, git is
+local to your computer. It is the version control software used to keep track of your
+file's history.
+
+### Cloning a Repo
+
+The term "cloning" refers to a **git** command (NOT GitHub) for copying a remote repo
+onto your computer. In our case, a GitHub repo is the remote repo, meaning the repo is not
+stored on our computer. To clone a repo, we use the following command:
+
+```
+$ git clone remote-url
+```
+
+where `remote-url` is the remote url for the github repo you would like to clone.
+When you clone a repo, you may see some text:
+
+```
+Cloning into 'Classic-RPG'...
+remote: Enumerating objects: 1232, done.
+remote: Counting objects: 100% (519/519), done.
+remote: Compressing objects: 100% (325/325), done.
+remote: Total 1232 (delta 214), reused 399 (delta 178), pack-reused 713
+Receiving objects: 100% (1232/1232), 931.60 KiB | 9.51 MiB/s, done.
+Resolving deltas: 100% (556/556), done.
+```
+
+This means that the clone was successful! If you type `$ ls`, you should see a
+new repo with the name you cloned. See 
+[here](https://github.com/git-guides/git-clone#git-clone-with-ssh) for more details.
+
+### Push
+
+When you clone a repo, you may want to make some changes. Once you make the changes
+you want, make a commit like we covered in the GitHub module, using `git add` and 
+`git commit`. When you want to update GitHub as well, use the command
+
+```
+git push
+```
+
+to push to the repo. Note, this will only work if you cloned a repo from
+GitHub, or if you do some additional config first. Read more about that 
+[here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository)
+
+### Pull
+
+Lets say you share a public GitHub repo with me. In that case, either you or I
+could push to it. If I pushed some changes, you may want to get those changes
+onto your computer. To do so, type 
+
+```
+git pull
+```
+
+Sometimes, it will ask to merge, and open up an editor, usually vim. For
+more information on pulling a commit, see [here](https://github.com/git-guides/git-pull)
+
+## GitHub Features
+
+GitHub is a remote-repository host, meaning a place where you can store git repos.
+The following are features that are exclusive to **github**, and are usually done
+through their website.
+
+## Forks
+
+Lots of code is openly shared on GitHub, available for anyone to see. However, most
+people do not have direct write permissions to those repos (only read). To grab
+those repositories, GitHub has a feature called `forking`, which allows you to copy
+the repository into your GitHub account, almost as if it was yours.
+
+See [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) 
+for details on how to fork a repository.
+
+### Pull Requests
+
+Do not be fooled by the name. Pull requests are requests to add code to a GitHub
+repo. This is *especially* prevelant in open-source software development, when
+developers are welcoming revisions, but also want to check the provided code for
+quality.
+
+To learn more about pull requests, see [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+
+For a more generalized view at contributing to open-source projects, see
+[here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
+
+## Additional Resources
+
+* [GitHub Collaborating With Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests)
+* [GitHub Get Started](https://docs.github.com/en/get-started)
+
+{% endblock %}

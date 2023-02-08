@@ -1,11 +1,31 @@
-columns=3
+# List of rows, each row contains any number of modules
+# Add a new row when you want to create a new overarching topic!
+
+[[row]]
+id=0
+name="Getting Started"
+
+[[row]]
+id=1
+name="Software"
+
+[[row]]
+id=2
+name="Version Control"
+
+[[row]]
+id=3
+name="Licensing"
+
+
+# List of modules
 
 [[module]]
 id=0
-name="Getting Started"
-url="getting-started"
+name="Intro to Open Source"
+url="intro-to-open-source"
 icon="flag-fill"
-column=0
+row=0
 next=[7]
 
 [[module]]
@@ -13,15 +33,15 @@ id=7
 name="Installing Software"
 url="installing-software"
 icon="cloud-download-fill"
-column=0
-next=[1]
+row=0
+next=[8]
 
 [[module]]
 id=1
 name="Version Control"
 url="version-control"
 icon="file-diff-fill"
-column=1
+row=1
 next=[2, 4]
 
 [[module]]
@@ -29,7 +49,7 @@ id=2
 name="Git"
 url="git"
 icon="git"
-column=1
+row=1
 next=[3]
 
 [[module]]
@@ -37,26 +57,27 @@ id=3
 name="GitHub"
 url="github"
 icon="github"
-column=1
+row=1
 
 [[module]]
 id=4
-name="Tools"
-url="tools"
-icon="hammer"
-column=2
-next=[5, 6]
-
-[[module]]
-id=5
 name="Editors"
 url="editors"
 icon="text-left"
-column=2
+row=2
+next=[6]
+
+# [[module]]
+# id=6
+# name="Licensing"
+# url="licensing"
+# icon="person-fill-lock"
+# row=3
 
 [[module]]
-id=6
-name="Licensing"
-url="licensing"
-icon="person-fill-lock"
-column=3
+id=8
+name="Intro to UNIX"
+url="intro-to-unix"
+icon="terminal-fill"
+row=0
+next=[1]

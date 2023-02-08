@@ -1,0 +1,55 @@
+{% extends "base-module.html" %}
+{% block module %}
+
+# Editors
+
+A programmer's editor can greatly aid in their ability to program. Many modern
+editors come with fancy features, like automatic text completion, linting,
+built-in version control, and fancy debuggers. Simple editors can be equally as
+effective, and often times much more lightweight and versitile. 
+
+Your editor can sometimes vary depending on the details of the project you work on.
+Some tools can be built as add-ons for some editors but not others. 
+
+For example,
+[VSCode](https://code.visualstudio.com) offers quite a few tools for developers,
+including an [extension](https://code.visualstudio.com/docs/languages/rust) 
+for the programming language Rust,
+that adds many of the modern features I detailed earlier.
+
+
+## VSCode
+
+Developed by Microsoft, VSCode is a relatively lightweight editor with a plethora of 
+features. Aside from simple text input, you can install any number of extensions to help
+you program! It also happens to be open source, check out the repository 
+[here](https://github.com/Microsoft/vscode/).
+
+It is available on most platforms, you can install it 
+[here](https://code.visualstudio.com/Download).
+
+
+## Vim
+
+Vim is a program that has lasted the test of time. While it has a steeper learning
+curve than most other editors, it is incredibly powerful. *It also happens to be
+my editor of choice*.
+
+Most Unix machines (Linux/Mac) will have base vim pre-installed. To start it, open
+your terminal application, type `vim`, and hit `Enter`. To exit, type `:` (Shift + ;),
+release, type `q`, release, then hit `Enter`. This is typically written
+as `:q`. For more instructions on how to use vim, open vim and run `:help tutor`.
+
+I personally use a newer fork of vim called neovim, if you are curious about it,
+here is a link to the [repository](https://github.com/neovim/neovim),
+which includes guides and installation instructions.
+
+
+## Emacs
+
+Emacs is the favorite of a number of professors. Similar to vim, it is an 
+incredibly powerful tool with a long history and tons of customization. 
+It also has a fairly steep learning curve, but is equally rewarding. You 
+can install Emacs [here](https://www.gnu.org/software/emacs/download.html).
+
+{% endblock %}

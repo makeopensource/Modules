@@ -1,0 +1,131 @@
+{% extends "base-module.html" %}
+{% block module %}
+
+# Intro to UNIX
+
+In the previous section, Installing Software, you installed and opened a terminal 
+application. In this section, you will learn how to use it!
+
+## A Brief History
+
+Before we get into the details, a brief history lesson! In the 1960s, computers
+did not look the way we know now. As opposed to the displays of today, the teletype, 
+pictured below, fed in a large scroll of paper which printed computer output.
+Other computers had a small, boxy screen, typically called a **terminal**.
+Even the simple act of typing was a grueling task, since teletype keys were much 
+deeper and much slower.
+
+<div class="image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Teletype.jpg/2560px-Teletype.jpg" />
+    <div class="caption">Teletype Machine</div>
+</div>
+
+This meant a few things:
+
+1. Computers could not process graphics, only simple commands
+
+2. Those commands were simple to type, and usually abbreviated
+
+3. Commands were smaller and simpler so that the computer could process them
+
+
+The advent of UNIX was very much intertwined with the early advent of the internet – 
+ARPANET. UNIX was an operating system built in the early 60s by developers at 
+AT&T Bell Labs. As opposed to other operating systems, it was designed around
+a suite of very small, easily reusable programs. This is the bedrock of what is known
+as the "UNIX Philosophy" [1]. You can read a much more comprehensive (and super interesting)
+history [here](https://www.britannica.com/technology/computer/Time-sharing-and-minicomputers)!
+
+Needless to say, while UNIX is no longer supported, it branched into two implementations
+that **are**: BSD, and more popularly, Linux. If you use MacOS, you are running a version
+of BSD called [Darwin](https://en.wikipedia.org/wiki/Darwin_(operating_system)). *Notice, Windows
+is **not** UNIX-based*.
+
+
+## A Short Prefix
+
+Remember how I referenced the **terminal** earlier? The terminal you installed is
+(in technicality) a terminal **emulator**, meaning it mimics the behavior of a terminal!
+Similar to terminals of old, the only way to interface with the computer is with your 
+keyboard, with a set of commands. 
+
+Every terminal uses some language for its commands. Not all computers, including UNIX-based 
+computers, use the same language. However, *many* behave the same. The language a terminal
+uses is called its **shell**.
+
+
+## UNIX Filesystem
+
+One thing that UNIX standardized at the time of its creation was a modern filesystem.
+Regardless of what system you have now, you should be relatively familiar with how it
+is structured. On your computer, you have files, and folders which can store files.
+UNIX similarly has files, and directories that store files. From now on, we will use
+the term **directory**.
+
+There are a few super important directories that have shortcuts.
+
+* Home: The shortcut for home is `~`. You typically create files and directories here
+
+* Current: The shortcut for the current directory is `.`
+* Parent: The shortcut for the parent directory is `..`
+
+
+## UNIX Commands
+
+UNIX command instructions are formatted like this: `$ command`. 
+Note that the `$ ` is NOT included in the command.
+Whenever you see documentation about shell commands, they will most often begin with `$ `
+to indicate it is a shell command.
+
+Try typing the following command:
+
+```
+$ ls
+```
+
+What do you notice? The command `ls` is short for **list**, and it lists the contents of your
+current directory. `ls` is an example of a command that has a return value, meaning that after
+you hit `Enter`, text prints out. My output looks like this:
+
+<code>
+    LICENSE			app.py			plugins.py		static<br/>
+    README.md		buildme.sh		requirements.txt	templates<br/>
+    __pycache__		config.toml		runme.sh<br/>
+</code>
+
+This is the directory structure of the Modules project! Notice that each item is
+separated by spaces. In this case, templates is a directory, while plugins.py is a file.
+
+Part of the UNIX philosophy, is that **commands do not show anything if they succeed.**
+One example is the command `cd`, which is short for **change directory**. Try changing to one
+of the directories that `ls` printed earlier. Try the following command
+
+```
+$ cd <directory>
+```
+
+where `<directory>` is the name of the directory you want to enter! For example, if I want 
+to enter templates, I would type `$ cd templates`.
+
+
+
+Here is a list of other useful commands:
+
+* `man`: Short for manual, man shows the manual for the command! Try `$ man ls`. 
+*To exit a man page, hit `q` on your keyboard*.
+
+* `cat`: Short for concatenate, it concatenates the file and prints it out! 
+Try `$ cat filename.txt`.
+
+* `pwd`: Short for "Present Working Directory". It shows you where you are in the filesystem! Try
+`$ pwd`.
+
+Congratulations, you know the basics on how to use a UNIX-based terminal! For a more in-depth
+tutorial and reference, click [here](https://missing.csail.mit.edu/).
+
+
+## References
+
+[1] "Time-sharing and minicomputers," *www.britannica.com*. https://www.britannica.com/technology/computer/Time-sharing-and-minicomputers
+
+{% endblock %}

@@ -8,7 +8,7 @@ of maintaining the Linux Kernel. It is available for all operating systems in so
 capacity, and is able to save the state of programming projects over the course of
 time, as well as merge the content of two programs. Git is a massive program, and 
 has an extensive list of terminology which is important for understanding how to 
-use it. This section will provide a glossary at the end, and a list of additional
+use it. This section will provide a list of additional
 resources, for your convenience!
 
 ## Installing Git
@@ -60,22 +60,96 @@ to install git:
 
 ## Initializing a Git Project
 
+In this tutorial, we will be assuming you have a complete UNIX setup.
+
+To start, create a new directory and enter it, as follows: 
+
+```
+$ mkdir git_project; cd git_project
+```
+
+Git initializes an environment in an existing directory. An initialized git directory
+is called a **repository**. To initialize your repository, run the following command:
+
+```
+$ git init
+```
+
+You should see a message that looks like this:
+
+```
+Initialized empty Git repository in /Users/username/git_project/.git
+```
+
+This means that git worked successfully! Git created a directory within `git_project/`
+that will store 
+
+
 ## Basics of Git
 
-## Advanced Git Techniques
+Remember the module about version control systems? The purpose of Git is to save
+the state of our code, and help with collaboration! To save state, there are two
+major steps:
 
+1. Staging: Tell git exactly which files you want to save.
+
+2. Committing: Save the state of the files you staged.
+
+### Staging
+
+To stage `filename.txt`, run the following command:
+
+```
+$ git add filename.txt
+```
+
+You can stage multiple files too, just add spaces in between like so: 
+
+```
+$ git add fileA.txt fileB.txt
+```
+
+### Committing
+
+Commits come with messages
+so that developers can identify which changes were made for what reasons. To commit
+your changes, run 
+
+```
+$ git commit -m "message"
+```
+
+where `message` is a description of the changes you made. **Don't forget to include
+the** `-m "message"` **!**
+
+### Other Commands
+
+* `$ git diff`: Shows you the lines you changed since your previous commit.
+* `$ git log`: Shows you a log of the commits you made thus far
+* `$ git status`: Shows the "status" of your current commit. More specifically,
+it shows which files you added in the *staging* process!
+
+
+
+*Up to this point, we covered all the essential git commands for using **locally**.
+In future modules, we will discuss GitHub, open-source git commands, and more
+advanced git techniques.*
+
+<!--
 ## Module Activity
 
-<a href="/file/git-challenge.pdf"><button class="file-download">Download Git Challenge</button></a>
-
-## Glossary
+    <a href="/file/git-challenge.pdf">
+        <button class="file-download">Download Git Challenge</button>
+    </a>
+-->
 
 ## Additional Resources
 
-
+* [git-scm](https://git-scm.com)
+* [atlassian git tutorial](https://www.atlassian.com/git/tutorials)
 
 ## References
 
-[1] "Git," git-scm.com. https://git-scm.com
+[1] "Git," *git-scm.com*. https://git-scm.com
 
 {% endblock %}

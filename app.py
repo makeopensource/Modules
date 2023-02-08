@@ -37,6 +37,7 @@ module_map = {x["url"]: x for x in config["module"]}
 
 @app.route("/")
 def hello_world():
+    print(config)
     response = render_template("index.html", config=config, unlocked=get_unlocked())
     return response
 
@@ -51,7 +52,10 @@ def module_view(module_url):
         return f"Module \"{module_name}\" not unlocked"
 
     try:
-        response = make_response(render_template(f"{module_url}.html", complete=module_id in get_unlocked()))
+        response = make_response(
+            render_template(f"{module_url}.html", 
+            complete=module_id in get_unlocked())
+        )
    
     except TemplateNotFound:
         response = make_response(f"Module \"{module_name}\" not yet implemented")
