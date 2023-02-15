@@ -8,6 +8,8 @@ New to open-source? MakeOpenSource modules will walk you through the necessary s
   * version control
   * software editors
 
+Here's a change!!!
+
 ### Module 1 – Git
 * What is Git?
 * **Task A:** Create a Repository
