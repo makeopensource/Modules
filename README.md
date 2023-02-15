@@ -10,6 +10,8 @@ New to open-source? MakeOpenSource modules will walk you through the necessary s
 
 Here's a change!!!
 
+Here's another change
+
 ### Module 1 – Git
 * What is Git?
 * **Task A:** Create a Repository
