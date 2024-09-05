@@ -1,0 +1,5 @@
+services:
+  modules:
+    build: .
+    ports:
+      - '127.0.0.1:8789:5001'
